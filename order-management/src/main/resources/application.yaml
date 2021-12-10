@@ -1,0 +1,33 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /${spring.application.name}/api/v1
+spring:
+  application:
+    name: ordermanagement
+  datasource:
+    url: jdbc:postgresql://localhost:5432/foodfix
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 60000
+  jpa:
+    show-sql: false
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+cluster:
+  order-take-api: http://localhost:8085/ordertaking/api/v1

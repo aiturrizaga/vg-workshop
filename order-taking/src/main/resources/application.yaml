@@ -1,0 +1,12 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /${spring.application.name}/api/v1
+spring:
+  application:
+    name: ordertaking
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: foodfix

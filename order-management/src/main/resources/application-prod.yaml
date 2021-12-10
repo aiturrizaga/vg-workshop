@@ -1,0 +1,22 @@
+server:
+  port: ${PORT}
+  servlet:
+    context-path: /${spring.application.name}/api/v1
+spring:
+  application:
+    name: ordermanagement
+  datasource:
+    url: jdbc:postgresql://ec2-54-226-56-198.compute-1.amazonaws.com:5432/d2cmq6l7iq63vu
+    username: etcvpdkbqdmexa
+    password: 21286ab5faa4d80d16db11cb25cb183ee9eacada2454d569e84ab56593ba94d8
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 60000
+  jpa:
+    show-sql: false
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    naming:
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
